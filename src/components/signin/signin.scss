@@ -1,0 +1,73 @@
+ 
+.sign-in {
+    width: 380px;
+    height: auto;
+    padding: 20px;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.685);
+    border-radius: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        margin: 10px 0;
+    }
+    .buttons {
+        text-align: center;
+    }
+    .input{
+        height: 30px;
+        font-size: 15px;
+    }
+    .celula{
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+    .label{
+        font-size: 20px;
+    }
+
+    .custom-button {
+        margin-top: 60px;
+        min-width: 165px;
+        width: auto;
+        height: 50px;
+        letter-spacing: 0.5px;
+        line-height: 50px;
+        font-size: 15px;
+        background-color: rgba(0, 0, 0, 0.712);
+        color: white;
+        text-transform: uppercase;
+        font-weight: bolder;
+        border-color: whitesmoke;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 0 0.5em whitesmoke;
+        border: none;
+
+      
+        &:hover {
+          background-color: whitesmoke;
+          color: black;
+          box-shadow: 0 0 2em black;
+          border: 1px solid black;
+        }
+    }
+    
+@media (max-width: 500px){
+    .buttons {
+        width: 90%;
+        flex-direction: column;
+    }
+}
+}
+
+@media (max-width: 800px){
+    .sign-in {
+        width: 90%;
+    }
+}
