@@ -53,6 +53,7 @@ class SignIn extends React.Component {
                         onChange={this.handleChange}
                         required/>
                     </div>
+
                     <div className='buttons'>
                         <button className='custom-button' type='submit'>SIGN IN </button>
                     </div> 

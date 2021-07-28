@@ -1,6 +1,32 @@
-.menu{
-    //background-image: linear-gradient(to  right, rgb(4, 44, 3), rgb(3, 177, 41));
-    color: rgb(255, 255, 255);
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Catamaran&display=swap');
 
-    font-size: 500px;
+
+
+.menu{
+    position: fixed;
+    font-family: 'Acme', sans-serif;
+    font-family: 'Catamaran', sans-serif; 
+
+
+    .menu-item{
+        font-size: 20px !important; 
+    }
+    .menu-item:hover{
+        background-color: black; 
+    }
+
+    .logotext{
+        text-align: center;
+    }
+
+    .arrow-icon{
+        font-size: 30px;
+    }
+
+    .big-icon{
+        color: whitesmoke;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 }

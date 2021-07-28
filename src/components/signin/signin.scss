@@ -11,12 +11,14 @@
     .form{
         display: flex;
         flex-direction: column;
+        height: 100%;
     }
     .title {
         margin: 10px 0;
     }
     .buttons {
         text-align: center;
+
     }
     .input{
         height: 30px;
