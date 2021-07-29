@@ -1,0 +1,27 @@
+.scheduler{
+    display: grid;
+    margin-top: 20px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+
+
+.calendar-task{
+    grid-column: 1 / 2;
+
+
+    .task-preview{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.painel{
+    grid-column: 2 / 6;
+    align-self: center;
+
+}
+
+}
+
