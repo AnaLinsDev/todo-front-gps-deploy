@@ -2,6 +2,16 @@
 html{
   background-image: linear-gradient(to bottom right, rgb(81, 69, 248), rgb(111, 113, 228));
   background-attachment: fixed;
+  scroll-behavior: smooth;
+
+}
+
+body::-webkit-scrollbar {
+  width: 10px
+} 
+
+body::-webkit-scrollbar-thumb {   
+background-color: rgb(0, 0, 0);   
 }
 
 .App {

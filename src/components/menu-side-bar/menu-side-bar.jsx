@@ -31,7 +31,8 @@ function MenuSideBar() {
   return(
 
         <div className='menu'>
-        <ProSidebar collapsed={menuCollapse} >
+        <ProSidebar 
+        collapsed = {menuCollapse} >
           <SidebarHeader >
           <div className="logotext" >
           

@@ -1,0 +1,27 @@
+.task-painel{
+    width: 90%;
+    height: 150px;
+    margin: 10px auto;
+    border-radius: 10px 0 0 10px;
+    background-color: white;
+    box-shadow: 0 0 0.2em rgb(41, 38, 226);
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    h1{
+        font-size: 30px;
+        background-color: rgb(122, 173, 240);
+    }
+    p{
+        font-size: 15px;
+        text-align: justify;
+        padding: 15px;
+    }
+}
+.task-painel::-webkit-scrollbar {
+    width: 15px;
+  } 
+  
+.task-painel::-webkit-scrollbar-thumb {   
+  background-color: rgb(31, 8, 160);   
+  }
