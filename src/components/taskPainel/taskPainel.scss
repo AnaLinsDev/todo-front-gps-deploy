@@ -40,10 +40,12 @@
 
     .done{
         color: rgb(7, 177, 7);
+        border-radius: 10px;
     }
     .undone{
         color: black;
         text-align: left;
+        border-radius: 10px;
     }
     .delete{
         color: rgb(219, 22, 22);
@@ -53,7 +55,14 @@
         margin-left: 10px;
     }
 
-
+    .done:hover{
+        background-color: rgb(7, 177, 7);
+        color: white;
+    }
+    .undone:hover{
+        background-color: black;
+        color: white;
+    }
     .delete:hover{
         background-color: rgb(219, 22, 22);
         color: white;
