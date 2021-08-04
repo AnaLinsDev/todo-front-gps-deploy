@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .painel{
     width: 100%;
     height: auto;
@@ -6,7 +7,7 @@
     box-shadow: 0 0 1em black;
     border-radius: 10px;
     text-align: center;
-    font-size: 50px;
+    
 
 
     .painel-main{
@@ -18,7 +19,7 @@
         .painel-colunm{
             height: 100vh;
             border-collapse: collapse;
-            border: 2px solid rgb(92, 92, 92);
+            border: 2px solid rgb(36, 120, 230);
         }
         .painel-colunm-tasks{
             height: 100;
@@ -28,7 +29,15 @@
         .painel-colunm p.type{
             margin: 0;
             height: 10%;
-            background-color: rgb(98, 16, 230);
+            font-family: 'Indie Flower', cursive;
+            background-color: rgb(122, 173, 240);
+            font-family: 'Righteous', cursive;
+            font-size: 30px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:auto;
         }
     }
 }

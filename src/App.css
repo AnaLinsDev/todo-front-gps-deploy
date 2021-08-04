@@ -1,6 +1,7 @@
 
 html{
-  background-image: linear-gradient(to bottom right, rgb(81, 69, 248), rgb(111, 113, 228));
+  /* background-image: linear-gradient(to bottom right, rgb(81, 69, 248), rgb(111, 113, 228)); */
+  background-image: linear-gradient(to bottom right, rgb(60, 212, 218), rgb(123, 248, 98));
   background-attachment: fixed;
   scroll-behavior: smooth;
 
