@@ -3,8 +3,10 @@ import TaskPainel from '../taskPainel/taskPainel';
 import './painel.scss'
 
 
-function Painel(){
+function Painel({date}){
 
+    const [selectedDate, setSelectedDate] = useState(date);
+    {console.log("PAINEL > " + date)}
     const [tasks, setTasks] = useState(
         [{
             title: "title 01",
@@ -58,7 +60,7 @@ function Painel(){
 
     return (
     <div className='painel'>
-    PAINEL AQUI
+    <h1>{selectedDate.toDateString()}</h1>
     <div className='painel-main'>
         <div className='painel-colunm'>
             <p className='type'>TODO</p>

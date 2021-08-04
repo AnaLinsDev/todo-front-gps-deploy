@@ -4,21 +4,19 @@ import './calendar.scss'
 import 'react-calendar/dist/Calendar.css';
 
 
-function CalendarComponent() {
-  const [value, onChange] = useState(new Date());
+function CalendarComponent({date}) {
+  const [value, setValue] = useState(date);
 
-  return (
-    <div className='calendar'>
+return(
+      <div className='calendar'>
       <Calendar
-        onChange={onChange}
+        onChange={setValue}
         value={value}
         showFixedNumberOfWeeks={true}
-
       />
       {console.log(value)}
       {/* <h1>{value.toDateString()}</h1>  */}
     </div>
-  );
+)
 }
-
 export default CalendarComponent;
