@@ -6,26 +6,18 @@ import Painel from '../../components/painel/painel';
 import TaskPreview from '../../components/taskPreview/taskPreview'
 
 
-class SchedulerPage extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        selectedDate: new Date()
-      };
-    }
-render() {
-    {console.log("SCHEDULER > " + this.state.selectedDate)}
+const SchedulerPage = () => {
+
 
     return (
     <div className='scheduler'>
     <div className='calendar-task'>
-        <CalendarComponent date={this.state.selectedDate}/>
+        <CalendarComponent />
         <TaskPreview />
     </div>
-    <Painel date={this.state.selectedDate} className='painel'/>
+    <Painel className='painel'/>
     </div>
     )
-}
     }
 
-export default SchedulerPage
+   export default SchedulerPage

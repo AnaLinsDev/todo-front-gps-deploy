@@ -36,7 +36,7 @@ function MenuSideBar() {
           <SidebarHeader >
           <div className="logotext" >
           
-              <p>{menuCollapse ? <h1>GPS</h1> : <h1 ><BsFillBarChartFill className='big-icon'/>  Planner </h1>}</p>
+              <h1>{menuCollapse ? <p>GPS</p> : <p ><BsFillBarChartFill className='big-icon'/>  Planner </p>}</h1>
             </div>
             <div className="closemenu" onClick={menuIconClick}>
 

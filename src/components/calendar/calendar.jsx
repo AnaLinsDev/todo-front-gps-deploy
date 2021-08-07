@@ -3,10 +3,19 @@ import Calendar from 'react-calendar';
 import './calendar.scss'
 import 'react-calendar/dist/Calendar.css';
 
+import {connect} from 'react-redux';
+import {selectSelectedDate} from '../../redux/selectedDate/selectedDate.selector'
+import {createStructuredSelector} from 'reselect'
+import { setSelectedDate } from '../../redux/selectedDate/selectedDate.actions';
 
-function CalendarComponent({date}) {
-  const [value, setValue] = useState(date);
 
+function CalendarComponent({date, setSelectedDate}){
+  
+const [value, setValue] = useState(new Date())
+
+
+setSelectedDate(value.toLocaleDateString())
+  
 return(
       <div className='calendar'>
       <Calendar
@@ -14,9 +23,19 @@ return(
         value={value}
         showFixedNumberOfWeeks={true}
       />
-      {console.log(value)}
-      {/* <h1>{value.toDateString()}</h1>  */}
-    </div>
+      </div>
 )
+
 }
-export default CalendarComponent;
+
+const mapStateToProps = createStructuredSelector({
+   date : selectSelectedDate
+
+})
+
+const mapDispatchToProps = dispatch => ({
+  setSelectedDate: date => dispatch( setSelectedDate(date) )
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalendarComponent)

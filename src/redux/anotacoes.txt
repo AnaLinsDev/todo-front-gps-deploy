@@ -1,0 +1,18 @@
+REDUX FLUX
+
+ACTION -> ROOT REDUCER -> STORE -> REACT -> DOM CHANGES
+
+The middlewhere está entre o acton e o root reducer,
+um exemplo de middlewhere pode ser o logger, que só vai
+printar no console o que está acontecendo naquele ponto.
+
+
+
+ROOT-REDUCER 
+É o reducer base que vai representar todo o state da aplicação junta
+
+
+
+
+
+

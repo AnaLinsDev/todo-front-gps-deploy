@@ -1,4 +1,6 @@
 import './App.css';
+import React, { Component } from 'react';
+
 import { Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 import HomePage from './pages/home/home';
 import SchedulerPage from './pages/scheduler/scheduler';
@@ -7,9 +9,20 @@ import DiagramsPage from './pages/dashboard/dashboard'
 import SignInSignUpPage from './pages/signin-signup/signin-signup';
 
 import MenuSideBar from './components/menu-side-bar/menu-side-bar'
+import {setSelectedDate} from './redux/selectedDate/selectedDate.actions'
 
-function App() {
+//redux
+import {connect} from 'react-redux';
+import {selectSelectedDate} from './redux/selectedDate/selectedDate.selector'
+import {createStructuredSelector} from 'reselect'
+
+
+class App extends Component {
+
+  render(){
+
   return (
+
     <div className='App'>
     <Router>
       <MenuSideBar className='menu'/>
@@ -29,6 +42,17 @@ function App() {
     </Router>
     </div>
   );
+  }
 }
 
-export default App;
+
+const mapStateToProps = createStructuredSelector({
+  selectedDate : selectSelectedDate
+})
+
+const mapDispatchToProps = dispatch => ({
+  setSelectedDate: date => dispatch( setSelectedDate(date) )
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
