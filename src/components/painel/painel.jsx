@@ -34,6 +34,34 @@ function Painel({date}){
             date: "09/08/2021"
         },
         {
+            id : 9,
+            title: "title 09",
+            description:"description 09",
+            status:"DONE",
+            date: "09/08/2021"
+        },
+        {
+            id : 10,
+            title: "title 10",
+            description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            status:"DONE",
+            date: "09/08/2021"
+        },
+        {
+            id : 11,
+            title: "title 11",
+            description:"description 11",
+            status:"DONE",
+            date: "09/08/2021"
+        },
+        {
+            id : 12,
+            title: "title 12",
+            description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            status:"DONE",
+            date: "09/08/2021"
+        },
+        {
             id : 4,
             title: "title 04",
             description:"description 04",
@@ -49,7 +77,7 @@ function Painel({date}){
         },
         {
             id : 6,
-            title: "title 06",
+            title: "title 06 title 06 title 06 title 06",
             description:"description 06",
             status:"TODO",
             date: "08/08/2021"
@@ -72,7 +100,7 @@ function Painel({date}){
 
     return (
     <div className='painel'>
-    <h1>{date}</h1>
+    <h1> Date   {date}</h1>
     <div className='painel-main'>
         <div className='painel-colunm'>
             <p className='type'>TODO</p>
