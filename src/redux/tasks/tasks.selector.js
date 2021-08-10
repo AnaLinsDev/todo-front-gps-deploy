@@ -1,8 +1,8 @@
 import {createSelector} from 'reselect'
 
-const Tasks = state => state.tasks
+const Task = state => state.task
 
-export const selectTasks = createSelector(
-    [Tasks],
-    (tasks) => tasks.Tasks
+export const selectTask = createSelector(
+    [Task],
+    (task) => task.Task
 )

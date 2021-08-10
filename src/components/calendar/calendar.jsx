@@ -25,12 +25,10 @@ return(
       />
       </div>
 )
-
 }
 
 const mapStateToProps = createStructuredSelector({
    date : selectSelectedDate
-
 })
 
 const mapDispatchToProps = dispatch => ({
