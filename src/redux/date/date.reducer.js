@@ -1,5 +1,5 @@
   
-import {DateActionTypes} from './selectedDate.types'
+import {DateActionTypes} from './date.types'
 
 
 const INITIAL_STATE ={

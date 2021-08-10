@@ -9,11 +9,11 @@ import DiagramsPage from './pages/dashboard/dashboard'
 import SignInSignUpPage from './pages/signin-signup/signin-signup';
 
 import MenuSideBar from './components/menu-side-bar/menu-side-bar'
-import {setSelectedDate} from './redux/selectedDate/selectedDate.actions'
+import {setSelectedDate} from './redux/date/date.actions'
 
 //redux
 import {connect} from 'react-redux';
-import {selectSelectedDate} from './redux/selectedDate/selectedDate.selector'
+import {selectSelectedDate} from './redux/date/date.selector'
 import {createStructuredSelector} from 'reselect'
 
 

@@ -4,17 +4,17 @@ import './calendar.scss'
 import 'react-calendar/dist/Calendar.css';
 
 import {connect} from 'react-redux';
-import {selectSelectedDate} from '../../redux/selectedDate/selectedDate.selector'
+import {selectSelectedDate} from '../../redux/date/date.selector'
 import {createStructuredSelector} from 'reselect'
-import { setSelectedDate } from '../../redux/selectedDate/selectedDate.actions';
+import { setSelectedDate } from '../../redux/date/date.actions';
 
 
 function CalendarComponent({date, setSelectedDate}){
   
 const [value, setValue] = useState(new Date())
 
-
 setSelectedDate(value.toLocaleDateString())
+
   
 return(
       <div className='calendar'>

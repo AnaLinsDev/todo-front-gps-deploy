@@ -1,8 +1,9 @@
 import {combineReducers } from 'redux'
-import selectedDateReducer from './selectedDate/selectedDate.reducer';
+import selectedDateReducer from './date/date.reducer';
 
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import tasksReducer from './tasks/tasks.reducer';
 
 const persistConfig = {
     key: 'root',
@@ -10,7 +11,8 @@ const persistConfig = {
   };
   
   const rootReducer = combineReducers({
-      date : selectedDateReducer
+      date : selectedDateReducer,
+      task : taskReducer
     //user: userReducer,
 
 })
