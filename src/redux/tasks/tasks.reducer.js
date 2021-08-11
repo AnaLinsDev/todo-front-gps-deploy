@@ -1,8 +1,8 @@
 import {TaskActionTypes} from './tasks.types'
-import {addTaskToList, removeTaskToList, setStatusToDoing, setStatusToDone, setStatusToTodo} from './task.utils'
+import {addTaskToList, removeTaskToList, setStatusDowngrade, setStatusUpgrade} from './task.utils'
 
 const INITIAL_STATE ={
-    task: []
+    taskList: []
 }
 
 const taskReducer = (state =  INITIAL_STATE, action) => {
@@ -11,33 +11,29 @@ const taskReducer = (state =  INITIAL_STATE, action) => {
         case TaskActionTypes.SET_TASKS:
             return {
                 ...state,
-                task: action.payload
+                taskList: action.payload
             }
         case TaskActionTypes.ADD_TASK:
             return {
                 ...state,
-                task: addTaskToList(state.task, action.payload)
+                taskList: addTaskToList(state.taskList, action.payload)
             }
         case TaskActionTypes.REMOVE_TASK:
             return {
                 ...state,
-                task: removeTaskToList(state.task, action.payload)
+                taskList: removeTaskToList(state.taskList, action.payload)
             }
-        case TaskActionTypes.SET_STATUS_TODO:
+        case TaskActionTypes.SET_STATUS_DOWNGRADE:
             return {
                 ...state,
-                task: setStatusToTodo(state.task, action.payload)
+                taskList: setStatusDowngrade(state.taskList, action.payload)
             }
-        case TaskActionTypes.SET_STATUS_DONE:
+        case TaskActionTypes.SET_STATUS_UPGRADE:
             return {
                 ...state,
-                task: setStatusToDone(state.task, action.payload)
+                taskList: setStatusUpgrade(state.taskList, action.payload)
             }
-        case TaskActionTypes.SET_STATUS_DOING:
-            return {
-                ...state,
-                task: setStatusToDoing(state.task, action.payload)
-            }
+
 
             default:
                 return state

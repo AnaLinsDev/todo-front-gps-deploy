@@ -15,20 +15,16 @@ export const removeTask = (task) => ({
     payload: task
 })
 
-export const setStatusTaskToTodo = (task) => ({
-    type: TaskActionTypes.SET_STATUS_TODO,
+export const setStatusDowngrade = (task) => ({
+    type: TaskActionTypes.SET_STATUS_DOWNGRADE,
     payload: task
 })
 
-export const setStatusTaskToDoing = (task) => ({
-    type: TaskActionTypes.SET_STATUS_DOING,
+export const setStatusUpgrade = (task) => ({
+    type: TaskActionTypes.SET_STATUS_UPGRADE,
     payload: task
 })
 
-export const setStatusTaskToDone = (task) => ({
-    type: TaskActionTypes.SET_STATUS_DONE,
-    payload: task
-})
 
 
 
