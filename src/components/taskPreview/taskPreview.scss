@@ -1,13 +1,70 @@
-.task-preview{
-    width: 300px;
-    height: 340px;
-    background-color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 0 0.6em rgb(126, 125, 125);
-    border-radius: 10px;
+.task-preview {
+  width: 300px;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 0.6em rgb(126, 125, 125);
+  border-radius: 10px;
 
+  /*display: flex;
+  flex-direction: column;
+  /*justify-content: center;
+  align-items: center;*/
+
+  .create-task-title {
+    background: #f0f3bd;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin:auto;
+    border-bottom: 2px solid #cccccc;
+  }
+  .create-task-title h2 {
+    font-family: "Righteous", cursive;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 4px 0;
+  }
+  .task-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .task-form input {
+    border: none;
+    border-bottom: 2.5px solid #000000;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  .task-form input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
+  .task-form #form-title {
+    margin-top: 15px;
+    align-self: center;
+    width: 50%;
+  }
+  .task-form label {
+    margin-left: 10%;
+    margin: 0 0 5px 10%;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .task-form #description {
+    width: 80%;
+    align-self: center;
+  }
+  .task-form .form-date {
+    margin-top: 15px;
+  }
+  .task-form #date {
+    width: 50%;
+    margin-left: 10%;
+  }
+  .task-form .btn-send {
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: #ffffff;
+    background: #006edc;
+    align-self: center;
+    margin: 10px 0;
+  }
 }
