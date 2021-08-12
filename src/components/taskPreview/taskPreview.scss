@@ -11,7 +11,7 @@
   align-items: center;*/
 
   .create-task-title {
-    background: #f0f3bd;
+    background-color: rgb(213, 213, 216);
     display: flex;
     justify-content: center;
     border-bottom: 2px solid #cccccc;
@@ -25,46 +25,59 @@
   .task-form {
     display: flex;
     flex-direction: column;
-  }
-  .task-form input {
+  
+  input {
     border: none;
     border-bottom: 2.5px solid #000000;
     margin-bottom: 15px;
     font-size: 14px;
   }
-  .task-form input:focus {
+  input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
   }
-  .task-form #form-title {
+  #form-title {
     margin-top: 15px;
     align-self: center;
     width: 50%;
   }
-  .task-form label {
+  label {
     margin-left: 10%;
     margin: 0 0 5px 10%;
     font-size: 15px;
     font-weight: 600;
   }
-  .task-form #description {
+  #description {
+    font-size: 15px;
     width: 80%;
     align-self: center;
   }
-  .task-form .form-date {
+  .form-date {
     margin-top: 15px;
   }
-  .task-form #date {
+  #date {
     width: 50%;
     margin-left: 10%;
   }
-  .task-form .btn-send {
-    width: 100px;
-    height: 30px;
+  .btn-send {
+    width: 120px;
+    height: 40px;
     border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 0.6em rgb(0, 0, 0);
     color: #ffffff;
     background: #006edc;
     align-self: center;
     margin: 10px 0;
   }
+  
+  .btn-send:hover {
+    background: rgb(3, 0, 206)
+  }
+  .btn-send:active {
+    box-shadow: 0 0 0.6em #006edc;
+    background: #000000;
+  }
+
+}
 }

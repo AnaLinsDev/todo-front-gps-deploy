@@ -84,7 +84,7 @@ function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
      <RiDeleteBin5Line className='delete icon' 
      onClick={() => {handleClick(task, 'DELETE', 'deletetask'); removeTask(task)}} />
 
-     <BiEditAlt  className='update icon'/>
+     {/* <BiEditAlt  className='update icon'/> */}
 
      </div>
     </div>

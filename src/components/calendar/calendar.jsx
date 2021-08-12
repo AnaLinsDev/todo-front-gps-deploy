@@ -14,7 +14,6 @@ function CalendarComponent({date, setSelectedDate}){
 const [value, setValue] = useState(new Date())
 
 setSelectedDate(value.toLocaleDateString())
-
   
 return(
       <div className='calendar'>
