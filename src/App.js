@@ -25,10 +25,10 @@ class App extends Component {
       <Switch >
       
       <Route exact path='/' component={HomePage} />
-      <Route exact path='/perfil' component={PerfilPage} />
-      <Route exact path='/scheduler' component={SchedulerPage} />
-      <Route exact path='/dashboard' component={DiagramsPage} />
-      <Route exact path='/signin-signup' component={SignInSignUpPage} />
+      <Route path='/perfil' component={PerfilPage} />
+      <Route path='/scheduler' component={SchedulerPage} />
+      <Route path='/dashboard' component={DiagramsPage} />
+      <Route path='/signin-signup' component={SignInSignUpPage} />
       
       </Switch>
       </div>
