@@ -1,37 +1,68 @@
 import React from 'react';
 import './signup.scss'
 
+//redux
+import { connect } from 'react-redux';
+import { addUser } from '../../redux/user/user.actions';
+
+
 class SignUp extends React.Component {
     constructor(props){
         super(props)
         
         this.state = {
-            'displayName': '',
-            'email': '',
-            'password': '',
-            'confirmPassword': ''
+            displayName     : '',
+            email           : '',
+            password        : '',
+            confirmPassword : ''
         }
     }
 
     handleSubmit = async event => {
-        // Quando o usuário apertar em "SIGN UP", virá para cá
         event.preventDefault();
-    
-        // o this state está com os valores digitas por conta do handleChange
-        const { displayName, email, password, confirmPassword } = this.state;
-    
-        if (password !== confirmPassword) {
-          alert("passwords don't match");
-          return;
+ 
+        const user = {
+            displayName : this.state.displayName,
+            email : this.state.email,
+            password : this.state.password,
+            confirmPassword : this.state.confirmPassword
         }
-        // Se as senhas forem iguais, aí fazemos a lógica aqui para cadastrar o usuário
+
+        this.setState({
+            displayName: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+          });
+
+        if (user.password != user.confirmPassword) {
+            console.log( user.password + " --- " +user.confirmPassword)
+            alert("passwords don't match");
+            return;
+          }else{
+
+        fetch(`http://localhost:8080/usuario/createusuario`,
+        { 
+         method: 'POST' ,
+         headers: {"Content-type": "application/json"},
+         body: JSON.stringify({
+            name :        user.displayName,
+            email :       user.email,
+            password :    user.password
+         })
+
+       })
+        .then( res => res.json())
+        .then( obj => addUser(obj))
+        .catch(err => { alert("Error: " + err); })
+
+    }
       };
 
     handleChange = event => {
        // Toda vez que o input for alterado, o state receberá o valor
         const { name, value } = event.target
-
-        this.setState({[name]: value})
+        this.setState({[name]: value}, () => console.log(this.state))
     }
 
 
@@ -79,7 +110,9 @@ class SignUp extends React.Component {
                         required/>
                     </div>
                     <div className='buttons'>
-                        <button className='custom-button' type='submit'>SIGN UP </button>
+                        <button className='custom-button' type='submit'
+                                  onClick={this.handleClick}
+                                  >SIGN UP </button>
                     </div> 
                 </form>
             </div>
@@ -87,5 +120,8 @@ class SignUp extends React.Component {
     }
 }
 
-
-export default SignUp;
+const mapDispatchToProps = dispatch => ({
+    addUser: user => dispatch(addUser(user)) 
+    })
+    
+export default connect(null, mapDispatchToProps)(SignUp)

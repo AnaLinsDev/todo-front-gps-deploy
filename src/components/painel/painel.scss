@@ -3,35 +3,33 @@
 .painel{
     width: 100%;
     height: auto;
-    background-color: white;
     font-family: 'Quicksand', sans-serif;    
-    box-shadow: 0 0 0.6em rgb(126, 125, 125);
+    box-shadow: 0 0 0.2em rgb(126, 125, 125);
     border-radius: 10px;
     text-align: center;
     margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.527);
 
-    h1{
-        padding: 10px;
-        background-color: rgb(213, 213, 216);
-    }
 
     .painel-main{
-        height: 100vh;
+        height: 85vh;
         margin: 0px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
 
 
         .painel-colunm{
-            height: 100vh;
+            background-color: whitesmoke;
+            margin: 15px;
+            height: auto;
             border-collapse: collapse;
-            border: 0.5px solid rgb(36, 120, 230);
+            border: 0.01px solid rgba(17, 192, 105, 0.678);
             overflow: auto;
             scroll-behavior: smooth;
             border-radius: 10px;
         }
         .painel-colunm-tasks{
-            height: 100;
+            height: 100px;
             display: grid;
             grid-template-columns: 1fr;
         }
@@ -39,7 +37,7 @@
             margin: 0;
             height: 10%;
             font-family: 'Indie Flower', cursive;
-            background-color: rgb(122, 173, 240);
+            background-color: rgba(36, 230, 188, 0.452);
             font-family: 'Righteous', cursive;
             font-size: 30px;
             
@@ -58,3 +56,26 @@
 .painel-colunm::-webkit-scrollbar-thumb {   
   background-color: rgb(31, 8, 160);   
   }
+
+  @media (max-width: 800px){
+    .painel{
+        margin: 10px;
+        .painel-main{
+            grid-template-columns: 1fr;
+            height: 100vh;
+            
+        
+            .painel-colunm{
+                margin: 5px;
+                border: 0.2px solid rgba(17, 192, 105, 0.972);
+                border-radius: 0px;
+            }
+
+            .painel-colunm p.type{
+                height: 40px;
+                font-size: 20px;
+            }
+
+        }   
+    }
+}

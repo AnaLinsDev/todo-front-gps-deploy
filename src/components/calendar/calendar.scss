@@ -1,11 +1,10 @@
 .calendar{
-
+    width: 300px;
+    height: 300px;
 
     .react-calendar{
-        width: 300px;
-        height: 340px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        box-shadow: 0 0 0.6em rgb(126, 125, 125);
+        box-shadow: 0 0 0.2em rgb(126, 125, 125);
         border-radius: 10px;
     }
     .react-calendar__navigation button{

@@ -74,7 +74,7 @@ function TaskPreview ({addTask}){
       </div>
       
       <button type="button" className="btn-send"
-          onClick={() => {handleClick(); addTask(response)}} 
+          onClick={() => {handleClick()}} 
           >Add to Painel</button>
     </form>
   </div>
