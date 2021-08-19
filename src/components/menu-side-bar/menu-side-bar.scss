@@ -7,19 +7,35 @@
     font-family: 'Acme', sans-serif;
     font-family: 'Catamaran', sans-serif; 
 
+    .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout {
+        color: white ;
+        background-color: #046e45;
+    }
+    .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item >
+    .pro-icon-wrapper {
+        background-color: rgba(0, 0, 0, 0.404); 
+        border-radius: 10px;
+    }
 
     .menu-item{
         font-size: 20px !important; 
     }
     .menu-item:hover{
-        background-color: black; 
+        background-color: rgba(0, 0, 0, 0.404); 
+    }
+    
+    .arrow-icon:hover{
+        border-radius: 100px;
+        background-color:rgba(0, 0, 0, 0.404); 
     }
 
-    .logotext{
+    .closemenu, .logotext{
         text-align: center;
     }
 
+
     .arrow-icon{
+        padding: 5px;
         font-size: 30px;
     }
 

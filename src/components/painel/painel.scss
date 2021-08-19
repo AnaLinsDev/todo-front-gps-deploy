@@ -8,7 +8,7 @@
     border-radius: 10px;
     text-align: center;
     margin-bottom: 40px;
-    background-color: rgba(255, 255, 255, 0.109);
+    background-color: rgba(255, 255, 255, 0.212);
 
 
     .painel-main{
@@ -19,11 +19,10 @@
 
 
         .painel-colunm{
-            background-color: rgba(0, 0, 0, 0.219);
-            margin: 15px;
+            background-color: rgba(0, 0, 0, 0.377);
+            margin: 10px;
             height: auto;
             border-collapse: collapse;
-            border: 0.01px solid rgba(0, 255, 128, 0.479);
             overflow: auto;
             scroll-behavior: smooth;
             border-radius: 10px;
@@ -62,7 +61,7 @@
         margin: 10px;
         .painel-main{
             grid-template-columns: 1fr;
-            height: 100vh;
+            height: 200vh;
             
         
             .painel-colunm{
@@ -78,4 +77,12 @@
 
         }   
     }
+}
+
+@media (max-width: 300px){
+
+    .painel{
+        margin: 0px;
+    }
+
 }
