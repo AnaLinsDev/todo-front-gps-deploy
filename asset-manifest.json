@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/todo-front-gps-deploy/static/css/main.56364f50.chunk.css",
-    "main.js": "/todo-front-gps-deploy/static/js/main.3f872e4d.chunk.js",
-    "main.js.map": "/todo-front-gps-deploy/static/js/main.3f872e4d.chunk.js.map",
+    "main.css": "/todo-front-gps-deploy/static/css/main.d15aa022.chunk.css",
+    "main.js": "/todo-front-gps-deploy/static/js/main.3d68aaa2.chunk.js",
+    "main.js.map": "/todo-front-gps-deploy/static/js/main.3d68aaa2.chunk.js.map",
     "runtime-main.js": "/todo-front-gps-deploy/static/js/runtime-main.38b7bcf4.js",
     "runtime-main.js.map": "/todo-front-gps-deploy/static/js/runtime-main.38b7bcf4.js.map",
     "static/css/2.cfaadb5c.chunk.css": "/todo-front-gps-deploy/static/css/2.cfaadb5c.chunk.css",
-    "static/js/2.d7b1a097.chunk.js": "/todo-front-gps-deploy/static/js/2.d7b1a097.chunk.js",
-    "static/js/2.d7b1a097.chunk.js.map": "/todo-front-gps-deploy/static/js/2.d7b1a097.chunk.js.map",
+    "static/js/2.bb5f48a5.chunk.js": "/todo-front-gps-deploy/static/js/2.bb5f48a5.chunk.js",
+    "static/js/2.bb5f48a5.chunk.js.map": "/todo-front-gps-deploy/static/js/2.bb5f48a5.chunk.js.map",
     "index.html": "/todo-front-gps-deploy/index.html",
     "static/css/2.cfaadb5c.chunk.css.map": "/todo-front-gps-deploy/static/css/2.cfaadb5c.chunk.css.map",
-    "static/css/main.56364f50.chunk.css.map": "/todo-front-gps-deploy/static/css/main.56364f50.chunk.css.map",
-    "static/js/2.d7b1a097.chunk.js.LICENSE.txt": "/todo-front-gps-deploy/static/js/2.d7b1a097.chunk.js.LICENSE.txt"
+    "static/css/main.d15aa022.chunk.css.map": "/todo-front-gps-deploy/static/css/main.d15aa022.chunk.css.map",
+    "static/js/2.bb5f48a5.chunk.js.LICENSE.txt": "/todo-front-gps-deploy/static/js/2.bb5f48a5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.38b7bcf4.js",
     "static/css/2.cfaadb5c.chunk.css",
-    "static/js/2.d7b1a097.chunk.js",
-    "static/css/main.56364f50.chunk.css",
-    "static/js/main.3f872e4d.chunk.js"
+    "static/js/2.bb5f48a5.chunk.js",
+    "static/css/main.d15aa022.chunk.css",
+    "static/js/main.3d68aaa2.chunk.js"
   ]
 }
