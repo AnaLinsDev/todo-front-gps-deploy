@@ -1,13 +1,22 @@
 import React from 'react';
 import './signin.scss'
 
+//redux
+import { connect } from 'react-redux';
+import { addUser } from '../../redux/user/user.actions';
+
+
+
 class SignIn extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
             email:'',
-            password:''
+            password:'',
+
+            nameLogado : '' , 
+            emailLogado : ''
         }
     }
 
@@ -18,7 +27,20 @@ class SignIn extends React.Component {
         // o this state está com os valores digitas por conta do handleChange
         const {email, password} = this.state
 
-        };
+        fetch(`http://localhost:8080/usuario/login`,
+        { 
+         method: 'PUT' ,
+         headers: {"Content-type": "application/json"},
+         body: JSON.stringify({
+            name     :       '',
+            email    :       email,
+            password :       password
+         })
+       })
+       .then( res =>  res.json())
+       .then( obj => (obj.name  == '' || obj.name == undefined) ? alert(" Email ou senha incorretos !! ") : this.setState({ nameLogado : obj.name , emailLogado : obj.email}))
+       .catch(err => { alert("Error: " + err); })
+    }
 
     handleChange = event => {
         // Toda vez que o input for alterado, o state receberá o valor
@@ -29,6 +51,9 @@ class SignIn extends React.Component {
 
 
     render(){
+
+        this.props.addUser({name: this.state.nameLogado, email : this.state.emailLogado})
+
         return(
         <div className='sign-in'>
                 <h2 className='title'>I already have a account</h2>
@@ -63,4 +88,9 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+    addUser: user => dispatch(addUser(user)) 
+    })
+    
+export default connect(null, mapDispatchToProps)(SignIn)
+

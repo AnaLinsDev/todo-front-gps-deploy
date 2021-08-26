@@ -19,14 +19,28 @@ import { BsFillBarChartFill } from "react-icons/bs";
 import 'react-pro-sidebar/dist/css/styles.css';
 import  './menu-side-bar.scss'
 
-function MenuSideBar() {
+//redux
+import {connect} from 'react-redux';
+import {selectUser} from '../../redux/user/user.selector'
+import { addUser } from '../../redux/user/user.actions';
+import {createStructuredSelector} from 'reselect'
+
+function MenuSideBar({user, addUser}) {
 
   const [menuCollapse, setMenuCollapse] = useState(false);
-  const user = useState(null);
 
   const menuIconClick = () => {
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
+  console.log("USUARIO : " +  user.name)
+
+  function logOut(){
+      addUser({
+        name: '',
+        email: ''
+    })
+  }
 
   return(
 
@@ -59,9 +73,9 @@ function MenuSideBar() {
           {/* AQUI SÓ VAI FUNCIONAR MESMO QUANDO O USUARIO ESTIVER FUNCIONANDO NO BACK E FRONT */}
           <SidebarFooter >
             <Menu iconShape="square">
-              {user[0] == null
+              {user.name == '' && user.email == ''
               ?  <MenuItem icon={<BiArrowToRight   />}  className='menu-item'>Sign In or Sign Up <Link to="/signin-signup" /></MenuItem>
-              :  <MenuItem icon={<FiLogOut/>} className='menu-item'>Logout</MenuItem>   
+              :  <MenuItem icon={<FiLogOut/>} className='menu-item' onClick={() => logOut()}>Logout</MenuItem>   
               }
               
             </Menu>
@@ -72,34 +86,14 @@ function MenuSideBar() {
   )
 }
 
-export default MenuSideBar;
+const mapStateToProps = createStructuredSelector({
+  user : selectUser
+  })
 
 
+const mapDispatchToProps = dispatch => ({
+  addUser: user => dispatch(addUser(user)) 
+  })
 
-  {/*
-    <ProSidebar >
-      <SidebarContent className='sidebar'>
-      <Menu className='menu'>
-          <MenuItem className='menu-item'>Home<Link to="/" /></MenuItem>
-          <MenuItem className='menu-item'>Perfil<Link to="/perfil" /></MenuItem>
-          <MenuItem className='menu-item'>Dashboards<Link to="/dashboard" /></MenuItem>
-          <MenuItem className='menu-item'>Calendar Planner<Link to="/planner" /></MenuItem>
-          <MenuItem className='menu-item'>Sign In or Sign Up <Link to="/signin-signup" /></MenuItem>
-      </Menu>
-      </SidebarContent>
-    </ProSidebar>
-
-
-
-
-
-
-
-
-       <SubMenu title="Calendar Planner" >
-          <MenuItem>Diário <Link to="/planner" /></MenuItem>
-          <MenuItem>Semana <Link to="/planner" /></MenuItem>
-          <MenuItem>Mensal <Link to="/planner" /></MenuItem>
-          <MenuItem>Anual  <Link to="/planner" /></MenuItem>
-      </SubMenu> 
-*/}
+export default connect(mapStateToProps, mapDispatchToProps)(MenuSideBar)
+//export default MenuSideBar

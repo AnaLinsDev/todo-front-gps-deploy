@@ -14,7 +14,10 @@ class SignUp extends React.Component {
             displayName     : '',
             email           : '',
             password        : '',
-            confirmPassword : ''
+            confirmPassword : '',
+
+            nameLogado      : '',
+            emailLogado     : ''
         }
     }
 
@@ -36,7 +39,7 @@ class SignUp extends React.Component {
           });
 
         if (user.password != user.confirmPassword) {
-            console.log( user.password + " --- " +user.confirmPassword)
+            console.log( user.password + " --- " + user.confirmPassword)
             alert("passwords don't match");
             return;
           }else{
@@ -53,7 +56,7 @@ class SignUp extends React.Component {
 
        })
         .then( res => res.json())
-        .then( obj => addUser(obj))
+        .then( obj => this.setState({ nameLogado : obj.name , emailLogado : obj.email}))
         .catch(err => { alert("Error: " + err); })
 
     }
@@ -62,11 +65,14 @@ class SignUp extends React.Component {
     handleChange = event => {
        // Toda vez que o input for alterado, o state receberá o valor
         const { name, value } = event.target
-        this.setState({[name]: value}, () => console.log(this.state))
+        this.setState({[name]: value})
     }
 
 
     render(){
+
+        this.props.addUser({name: this.state.nameLogado, email : this.state.emailLogado})
+
         return(
             <div className='sign-up'>
                 <h2 className='title'>I do not have a account</h2>
