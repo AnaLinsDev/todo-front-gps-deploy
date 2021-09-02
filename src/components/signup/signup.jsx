@@ -16,6 +16,7 @@ class SignUp extends React.Component {
             password        : '',
             confirmPassword : '',
 
+            idLogado: '',
             nameLogado      : '',
             emailLogado     : ''
         }
@@ -44,10 +45,13 @@ class SignUp extends React.Component {
             return;
           }else{
 
-        fetch(`http://localhost:8080/usuario/createusuario`,
+        fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/criarusuario`,
         { 
          method: 'POST' ,
-         headers: {"Content-type": "application/json"},
+         headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-type": "application/json"
+        },
          body: JSON.stringify({
             name :        user.displayName,
             email :       user.email,
@@ -56,7 +60,7 @@ class SignUp extends React.Component {
 
        })
         .then( res => res.json())
-        .then( obj => this.setState({ nameLogado : obj.name , emailLogado : obj.email}))
+        .then( obj => this.setState({ idLogado: obj.id , nameLogado : obj.name , emailLogado : obj.email}))
         .catch(err => { alert("Error: " + err); })
 
     }
@@ -71,7 +75,7 @@ class SignUp extends React.Component {
 
     render(){
 
-        this.props.addUser({name: this.state.nameLogado, email : this.state.emailLogado})
+        this.props.addUser({id: this.state.idLogado, name: this.state.nameLogado, email : this.state.emailLogado})
 
         return(
             <div className='sign-up'>

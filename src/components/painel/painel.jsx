@@ -6,8 +6,8 @@ import './painel.scss'
 import {connect} from 'react-redux';
 import {selectSelectedDate} from '../../redux/date/date.selector'
 import {selectTaskList} from '../../redux/tasks/tasks.selector'
+import {selectUser} from '../../redux/user/user.selector'
 import {setTasks} from '../../redux/tasks/tasks.actions'
-
 import {createStructuredSelector} from 'reselect'
 
 class Painel extends Component{
@@ -27,7 +27,8 @@ UNSAFE_componentWillReceiveProps(newProps){
 componentDidMount(){
     console.log("ENTROU componentDidMount PAINEL")
 
-    fetch('http://localhost:8080/task/readtasks', { method: 'GET' })
+    fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/${this.props.user.id}/tasks`, 
+    { method: 'GET' })
     .then (res => res.json() )
     .then (out => {
         this.setState({task : out})
@@ -80,6 +81,7 @@ render(){
 }
 
 const mapStateToProps = createStructuredSelector({
+    user : selectUser,
     date : selectSelectedDate, 
     task : selectTaskList
     })

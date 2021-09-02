@@ -4,8 +4,10 @@ import "./taskPreview.scss";
 //redux
 import { connect } from 'react-redux';
 import { addTask } from '../../redux/tasks/tasks.actions';
+import {selectUser} from '../../redux/user/user.selector'
+import {createStructuredSelector} from 'reselect'
 
-function TaskPreview ({addTask}){
+function TaskPreview ({addTask, user}){
 
   const [date, setDate] = useState('')
   const [title, setTitle] = useState('')
@@ -25,10 +27,13 @@ function TaskPreview ({addTask}){
       status : 'TODO'
     }
 
-    fetch(`http://localhost:8080/task/createtask`,
+    fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/adicionartask/${user.id}`,
        { 
         method: 'POST' ,
-        headers: {"Content-type": "application/json"},
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-type": "application/json"
+        },
         body: JSON.stringify({
           title : task.title,
           description : task.description,
@@ -80,10 +85,13 @@ function TaskPreview ({addTask}){
   </div>
   )}
 
+  const mapStateToProps = createStructuredSelector({
+    user : selectUser,
+    })
 
   const mapDispatchToProps = dispatch => ({
     addTask: task => dispatch(addTask(task)) ,
     })
     
-export default connect(null, mapDispatchToProps)(TaskPreview)
+export default connect(mapStateToProps, mapDispatchToProps)(TaskPreview)
 

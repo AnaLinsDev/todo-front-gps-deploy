@@ -8,9 +8,11 @@ import { RiReplyLine } from "react-icons/ri";
 //redux
 import { connect } from 'react-redux';
 import { removeTask, setStatusDowngrade, setStatusUpgrade } from '../../redux/tasks/tasks.actions';
+import {selectUser} from '../../redux/user/user.selector'
+import {createStructuredSelector} from 'reselect'
 
-function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
 
+function TaskPainel({task, user, removeTask, setStatusDowngrade, setStatusUpgrade}){
 
     const handleClick = (taskInfo, method, endpoint, level=null) => {
 
@@ -27,12 +29,12 @@ function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
 
       console.log('-----------------------------------')
       console.log('-----------------------------------')
-      console.log('endpoint: ' + endpoint + '  metrhod: ' + method)
+      console.log('endpoint: ' + endpoint + '  method: ' + method)
       console.log('body: ' + taskInfo.status)
       console.log('-----------------------------------')
       console.log('-----------------------------------')
 
-      fetch(`http://localhost:8080/task/${endpoint}`,
+      fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/${user.id}/${endpoint}/${taskInfo.id}`,
          { 
           method: method ,
           headers: {"Content-type": "application/json"},
@@ -58,22 +60,22 @@ function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
     <div className = 'icons-sup'>
 
     <RiReplyLine className='undone icon' 
-    onClick={() => {handleClick(task, 'PUT', 'updatetask', 'down')}}/> 
+    onClick={() => {handleClick(task, 'PUT', 'atualizartask', 'down')}}/> 
 
     <HiCheck className='done icon'
-    onClick={() => {handleClick(task, 'PUT', 'updatetask', 'up')}} />
+    onClick={() => {handleClick(task, 'PUT', 'atualizartask', 'up')}} />
     
     </div>
     : task.status == "TODO" ?
     <div className = 'icons-sup-right'>
     <HiCheck className='done icon'
-    onClick={() => {handleClick(task, 'PUT', 'updatetask', 'up')}} />
+    onClick={() => {handleClick(task, 'PUT', 'atualizartask', 'up')}} />
     </div>
     :
     <div className = 'icons-sup'>
 
     <RiReplyLine className='undone icon' 
-    onClick={() => {handleClick(task, 'PUT', 'updatetask', 'down')}}/> 
+    onClick={() => {handleClick(task, 'PUT', 'atualizartask', 'down')}}/> 
     </div>
     }
 
@@ -82,7 +84,7 @@ function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
      <div className = 'icons-inf'>
 
      <RiDeleteBin5Line className='delete icon' 
-     onClick={() => {handleClick(task, 'DELETE', 'deletetask'); removeTask(task)}} />
+     onClick={() => {handleClick(task, 'DELETE', 'removertask'); removeTask(task)}} />
 
      {/* <BiEditAlt  className='update icon'/> */}
 
@@ -90,10 +92,16 @@ function TaskPainel({task, removeTask, setStatusDowngrade, setStatusUpgrade}){
     </div>
     )}
 
+
+
+const mapStateToProps = createStructuredSelector({
+  user : selectUser,
+  })
+
 const mapDispatchToProps = dispatch => ({
   removeTask: task => dispatch(removeTask(task)) ,
   setStatusDowngrade: task => dispatch(setStatusDowngrade(task)) ,
   setStatusUpgrade: task => dispatch(setStatusUpgrade(task)) 
   })
   
-export default connect(null, mapDispatchToProps)(TaskPainel)
+export default connect(mapStateToProps, mapDispatchToProps)(TaskPainel)

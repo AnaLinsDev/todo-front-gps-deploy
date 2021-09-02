@@ -5,8 +5,6 @@ import './signin.scss'
 import { connect } from 'react-redux';
 import { addUser } from '../../redux/user/user.actions';
 
-
-
 class SignIn extends React.Component {
     constructor(props){
         super(props)
@@ -15,6 +13,7 @@ class SignIn extends React.Component {
             email:'',
             password:'',
 
+            idLogado: '',
             nameLogado : '' , 
             emailLogado : ''
         }
@@ -27,10 +26,13 @@ class SignIn extends React.Component {
         // o this state está com os valores digitas por conta do handleChange
         const {email, password} = this.state
 
-        fetch(`http://localhost:8080/usuario/login`,
+        fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/login`,
         { 
-         method: 'PUT' ,
-         headers: {"Content-type": "application/json"},
+         method: 'POST' ,
+         headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-type": "application/json"
+        },
          body: JSON.stringify({
             name     :       '',
             email    :       email,
@@ -38,7 +40,7 @@ class SignIn extends React.Component {
          })
        })
        .then( res =>  res.json())
-       .then( obj => (obj.name  == '' || obj.name == undefined) ? alert(" Email ou senha incorretos !! ") : this.setState({ nameLogado : obj.name , emailLogado : obj.email}))
+       .then( obj => (obj.name  == '' || obj.name == undefined) ? alert(" Email ou senha incorretos !! ") : this.setState({ idLogado: obj.id ,nameLogado : obj.name , emailLogado : obj.email}))
        .catch(err => { alert("Error: " + err); })
     }
 
@@ -52,7 +54,7 @@ class SignIn extends React.Component {
 
     render(){
 
-        this.props.addUser({name: this.state.nameLogado, email : this.state.emailLogado})
+        this.props.addUser({id: this.state.idLogado, name: this.state.nameLogado, email : this.state.emailLogado})
 
         return(
         <div className='sign-in'>
