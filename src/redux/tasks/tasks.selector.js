@@ -6,3 +6,8 @@ export const selectTaskList = createSelector(
     [selectTask],
     (task) => task.taskList
 )
+
+export const selectTaskUpdating = createSelector(
+    [selectTask],
+    (task) => task.taskUpdating
+)

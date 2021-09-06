@@ -45,3 +45,22 @@ export const setStatusUpgrade = (listOfTasks, task) => {
 
     )
 }
+
+
+export const updateTask = (listOfTasks, task) => {
+    
+    return listOfTasks.map(t => 
+
+        (t.id == task.id) ?
+        {
+            id: task.id,
+            title : task.title,
+            description : task.description,
+            date :  task.date,
+            status : task.status
+        }
+
+        : t
+
+    )
+}

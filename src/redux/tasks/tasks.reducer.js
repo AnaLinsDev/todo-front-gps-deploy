@@ -1,8 +1,10 @@
 import {TaskActionTypes} from './tasks.types'
-import {addTaskToList, removeTaskToList, setStatusDowngrade, setStatusUpgrade} from './task.utils'
+import {addTaskToList, updateTask,  removeTaskToList, setStatusDowngrade, setStatusUpgrade} from './task.utils'
 
 const INITIAL_STATE ={
-    taskList: []
+    taskList: [],
+
+    taskUpdating : null
 }
 
 const taskReducer = (state =  INITIAL_STATE, action) => {
@@ -33,7 +35,17 @@ const taskReducer = (state =  INITIAL_STATE, action) => {
                 ...state,
                 taskList: setStatusUpgrade(state.taskList, action.payload)
             }
+        case TaskActionTypes.UPDATE_TASK:
+            return {
+                ...state,
+                taskList:  updateTask(state.taskList, action.payload)
+                }
 
+        case TaskActionTypes.GET_TASK_TO_UPDATE:
+            return {
+                ...state,
+                taskUpdating: action.payload
+                }
 
             default:
                 return state

@@ -65,7 +65,7 @@ function MenuSideBar({user, addUser}) {
             <Menu iconShape="square">
               <MenuItem active={true} icon={<FiHome />} className='menu-item'>Home<Link to="/" /></MenuItem>
               <MenuItem icon={<FaList />} className='menu-item'>Dashboards<Link to="/dashboard" /></MenuItem>
-              <MenuItem icon={<FaRegHeart />} className='menu-item'>Perfil<Link to="/perfil" /></MenuItem>
+              <MenuItem icon={<FaRegHeart />} className='menu-item'>You<Link to="/perfil" /></MenuItem>
               <MenuItem icon={<RiPencilLine />} className='menu-item'>Calendar Planner<Link to="/scheduler" /></MenuItem>
             </Menu>
           </SidebarContent>

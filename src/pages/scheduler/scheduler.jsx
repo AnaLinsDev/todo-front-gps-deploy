@@ -6,7 +6,7 @@ import Painel from '../../components/painel/painel';
 import TaskPreview from '../../components/taskPreview/taskPreview'
 
 
-const SchedulerPage = () => {
+const SchedulerPage = ({task}) => {
 
 
     return (
@@ -19,5 +19,6 @@ const SchedulerPage = () => {
     </div>
     )
     }
+    
+export default SchedulerPage
 
-   export default SchedulerPage

@@ -25,6 +25,16 @@ export const setStatusUpgrade = (task) => ({
     payload: task
 })
 
+export const setTaskById = (task) => ({
+    type: TaskActionTypes.UPDATE_TASK,
+    payload: task
+})
+
+export const getTaskToUpdate = (task) => ({
+    type: TaskActionTypes.GET_TASK_TO_UPDATE,
+    payload: task
+})
+
 
 
 

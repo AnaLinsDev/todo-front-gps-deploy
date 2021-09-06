@@ -5,10 +5,12 @@ import './painel.scss'
 //redux
 import {connect} from 'react-redux';
 import {selectSelectedDate} from '../../redux/date/date.selector'
-import {selectTaskList} from '../../redux/tasks/tasks.selector'
+import {selectTaskList, selectTaskUpdating} from '../../redux/tasks/tasks.selector'
 import {selectUser} from '../../redux/user/user.selector'
 import {setTasks} from '../../redux/tasks/tasks.actions'
 import {createStructuredSelector} from 'reselect'
+import TaskUpdate from '../taskUpdate/taskUpdate.component'
+
 
 class Painel extends Component{
 constructor(props){
@@ -44,15 +46,19 @@ render(){
     console.log("ENTROU RENDER PAINEL")
     const date  = this.props.date;
     const task  = this.state.task;
+    const taskupdate  = this.props.taskupdate;
 
     this.props.setTasks(task)
 
-    return (
+    console.log(task)
 
+    return (
+    
     <div className='painel'>
     <h1> Date  {date}</h1>
+    {taskupdate != null ? <TaskUpdate />  : 
     <div className='painel-main'>
-
+    
         <div className='painel-colunm'>
             <p className='type'>TODO</p>
             <div className='painel-colunm-tasks'>
@@ -73,8 +79,9 @@ render(){
                 {task.map(task => (task.status == "DONE" && task.date == date ? <TaskPainel key={task.id} task = {task}/> : ''))}
             </div>
         </div>
-
+    
     </div>
+}
     </div>
     )
 }
@@ -83,12 +90,15 @@ render(){
 const mapStateToProps = createStructuredSelector({
     user : selectUser,
     date : selectSelectedDate, 
-    task : selectTaskList
+    task : selectTaskList,
+    taskupdate : selectTaskUpdating
     })
 
 const mapDispatchToProps = dispatch => ({
     setTasks: task => dispatch(setTasks(task)) 
   })
+
+  
 
  export default connect(mapStateToProps, mapDispatchToProps)(Painel)
 

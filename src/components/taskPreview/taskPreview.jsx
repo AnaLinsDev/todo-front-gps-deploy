@@ -67,7 +67,9 @@ function TaskPreview ({addTask, user}){
         required
         cols="30"
         rows="10"
-        onChange={event => setDescription(event.target.value)}      ></textarea>
+        onChange={event => setDescription(event.target.value)}      >
+        </textarea>
+        
       <div className="form-date">
       <input  
           required 

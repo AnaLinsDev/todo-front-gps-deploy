@@ -1,0 +1,90 @@
+.task-update{
+  width: 300px;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 0.2em rgb(126, 125, 125);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  
+    .create-task-title {
+      background-color: rgba(36, 230, 188, 0.452);
+      display: flex;
+      justify-content: center;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+
+    .create-task-title h2 {
+      font-family: "Righteous", cursive;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin: 4px 0;
+    }
+    .task-form {
+      display: flex;
+      flex-direction: column;
+    
+    input {
+      
+      border: none;
+      border-bottom: 2.5px solid #000000;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    input:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+    }
+    #form-title {
+      margin-top: 15px;
+      align-self: center;
+      width: 50%;
+    }
+    label {
+      margin-left: 10%;
+      margin: 0 0 5px 10%;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    #description {
+      font-size: 15px;
+      width: 90%;
+      height: 80px;
+      align-self: center;
+    }
+    .form-date {
+      margin-top: 15px;
+      
+    }
+    #date {
+      width: 50%;
+      margin-left: 10%;
+    }
+    .btn{
+      width: 120px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+      margin: 10px ;
+    &.send {
+      color: #ffffff;
+      background: #006edc;
+    }
+    &.cancel{
+      color: #c00909;
+      border: 1px solid red ;
+      background-color: rgba(255, 0, 0, 0);
+    }
+  }
+    .btn-send:hover {
+      background: rgb(3, 0, 206)
+    }
+    .btn-send:active {
+      box-shadow: 0 0 0.6em #006edc;
+      background: #000000;
+    }
+  
+  }
+  }

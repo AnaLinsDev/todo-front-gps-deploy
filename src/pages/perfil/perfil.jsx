@@ -1,10 +1,24 @@
 import React from 'react';
 import './perfil.scss'
 
-const PerfilPage = () => (
+//redux
+import {selectUser} from '../../redux/user/user.selector'
+import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect'
+
+
+const PerfilPage = ({user}) => (
     <div>
-        <h1>PERFIL !!!</h1>
+        <h1>My Info</h1>
+        <h2>Name: {user.name}</h2>
+        <h2>Email: {user.email}</h2>
     </div>
 );
 
-export default PerfilPage
+const mapStateToProps = createStructuredSelector({
+    user : selectUser,
+    })
+  
+
+ export default connect(mapStateToProps)(PerfilPage)
+

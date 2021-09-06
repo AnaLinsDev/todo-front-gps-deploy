@@ -7,12 +7,12 @@ import { RiReplyLine } from "react-icons/ri";
 
 //redux
 import { connect } from 'react-redux';
-import { removeTask, setStatusDowngrade, setStatusUpgrade } from '../../redux/tasks/tasks.actions';
+import { removeTask, setStatusDowngrade, setStatusUpgrade, getTaskToUpdate } from '../../redux/tasks/tasks.actions';
 import {selectUser} from '../../redux/user/user.selector'
 import {createStructuredSelector} from 'reselect'
 
 
-function TaskPainel({task, user, removeTask, setStatusDowngrade, setStatusUpgrade}){
+function TaskPainel({task, user, removeTask, setStatusDowngrade, setStatusUpgrade, getTaskToUpdate}){
 
     const handleClick = (taskInfo, method, endpoint, level=null) => {
 
@@ -26,13 +26,6 @@ function TaskPainel({task, user, removeTask, setStatusDowngrade, setStatusUpgrad
         if     (taskInfo.status == 'DOING'){ taskInfo.status = 'TODO' }
         else if (taskInfo.status == 'DONE'){ taskInfo.status = 'DOING'}
       }
-
-      console.log('-----------------------------------')
-      console.log('-----------------------------------')
-      console.log('endpoint: ' + endpoint + '  method: ' + method)
-      console.log('body: ' + taskInfo.status)
-      console.log('-----------------------------------')
-      console.log('-----------------------------------')
 
       fetch(`https://gps-back-spring-ifeito.herokuapp.com/usuario/${user.id}/${endpoint}/${taskInfo.id}`,
          { 
@@ -79,14 +72,15 @@ function TaskPainel({task, user, removeTask, setStatusDowngrade, setStatusUpgrad
     </div>
     }
 
-     <h2>{task.title} </h2>
+     <h2>{task.title}  </h2>
      <p>{task.description}</p>
      <div className = 'icons-inf'>
 
      <RiDeleteBin5Line className='delete icon' 
      onClick={() => {handleClick(task, 'DELETE', 'removertask'); removeTask(task)}} />
 
-     {/* <BiEditAlt  className='update icon'/> */}
+     <BiEditAlt
+      className='update icon' onClick={() => {getTaskToUpdate(task)}} /> 
 
      </div>
     </div>
@@ -99,9 +93,14 @@ const mapStateToProps = createStructuredSelector({
   })
 
 const mapDispatchToProps = dispatch => ({
+
   removeTask: task => dispatch(removeTask(task)) ,
+
   setStatusDowngrade: task => dispatch(setStatusDowngrade(task)) ,
-  setStatusUpgrade: task => dispatch(setStatusUpgrade(task)) 
+  setStatusUpgrade: task => dispatch(setStatusUpgrade(task)) ,
+
+  getTaskToUpdate: task => dispatch(getTaskToUpdate(task)) 
+
   })
   
 export default connect(mapStateToProps, mapDispatchToProps)(TaskPainel)
