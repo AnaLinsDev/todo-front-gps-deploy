@@ -7,6 +7,19 @@ export const addUser = (user) => (
     }
 )
 
+export const deleteUser = (user) => (
+    {
+        type: UserActionTypes.DELETE_USER,
+        payload: user
+    }
+)
+
+export const updateUser = (user) => (
+    {
+        type: UserActionTypes.UPDATE_USER,
+        payload: user
+    }
+)
 
 
 

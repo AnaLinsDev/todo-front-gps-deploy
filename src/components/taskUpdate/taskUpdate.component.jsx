@@ -14,16 +14,11 @@ function TaskUpdate ({task, setTaskById, getTaskToUpdate, user}){
   const dateTask = task.date.split('/')
   const dateValue = dateTask[2] + '-' + dateTask[1] + '-' + dateTask[0]
 
-
   const [title, setTitle] = useState(task.title)
   const [date, setDate] = useState(dateValue)
   const [description, setDescription] = useState(task.description)
 
   const handleClick = () => {
-
-    console.log(task)
-    console.log(task)
-    console.log(task)
 
     const dateSplit = date.split('-')
     const dateOriginal = dateSplit[2] + '/' + dateSplit[1] + '/' + dateSplit[0]
@@ -93,12 +88,17 @@ function TaskUpdate ({task, setTaskById, getTaskToUpdate, user}){
           onChange={event => setDate(event.target.value)}       />
       </div>
       <div className='buttons-update-div'>
+        
       <button type="button" className="btn send"
-          onClick={() => {handleClick()}} 
-          >Update task</button>
+          onClick={() => {handleClick()}} >
+            Update task
+      </button>
+       
        <button type="button" className="btn cancel"
-          onClick={() => {getTaskToUpdate(null)}} 
-          >Cancel</button>
+          onClick={() => {getTaskToUpdate(null)}} >
+            Cancel
+      </button>
+
         </div>
     </form>
   </div>

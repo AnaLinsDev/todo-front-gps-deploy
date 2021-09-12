@@ -15,7 +15,8 @@ class SignIn extends React.Component {
 
             idLogado: '',
             nameLogado : '' , 
-            emailLogado : ''
+            emailLogado : '',
+            passwordLogado   : ''
         }
     }
 
@@ -40,7 +41,7 @@ class SignIn extends React.Component {
          })
        })
        .then( res =>  res.json())
-       .then( obj => (obj.name  == '' || obj.name == undefined) ? alert(" Email ou senha incorretos !! ") : this.setState({ idLogado: obj.id ,nameLogado : obj.name , emailLogado : obj.email}))
+       .then( obj => (obj.name  == '' || obj.name == undefined) ? alert(" Email ou senha incorretos !! ") : this.setState({ idLogado: obj.id ,nameLogado : obj.name , emailLogado : obj.email, passwordLogado : obj.password}))
        .catch(err => { alert("Error: " + err); })
     }
 
@@ -53,8 +54,7 @@ class SignIn extends React.Component {
 
 
     render(){
-
-        this.props.addUser({id: this.state.idLogado, name: this.state.nameLogado, email : this.state.emailLogado})
+        this.props.addUser({id: this.state.idLogado, name: this.state.nameLogado, email : this.state.emailLogado, password : this.state.passwordLogado})
 
         return(
         <div className='sign-in'>
