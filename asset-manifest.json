@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/todo-front-gps-deploy/static/css/main.71d0e38a.chunk.css",
+    "main.css": "/todo-front-gps-deploy/static/css/main.9f4ae437.chunk.css",
     "main.js": "/todo-front-gps-deploy/static/js/main.da96d507.chunk.js",
     "main.js.map": "/todo-front-gps-deploy/static/js/main.da96d507.chunk.js.map",
     "runtime-main.js": "/todo-front-gps-deploy/static/js/runtime-main.38b7bcf4.js",
@@ -10,14 +10,14 @@
     "static/js/2.36e9f766.chunk.js.map": "/todo-front-gps-deploy/static/js/2.36e9f766.chunk.js.map",
     "index.html": "/todo-front-gps-deploy/index.html",
     "static/css/2.cfaadb5c.chunk.css.map": "/todo-front-gps-deploy/static/css/2.cfaadb5c.chunk.css.map",
-    "static/css/main.71d0e38a.chunk.css.map": "/todo-front-gps-deploy/static/css/main.71d0e38a.chunk.css.map",
+    "static/css/main.9f4ae437.chunk.css.map": "/todo-front-gps-deploy/static/css/main.9f4ae437.chunk.css.map",
     "static/js/2.36e9f766.chunk.js.LICENSE.txt": "/todo-front-gps-deploy/static/js/2.36e9f766.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.38b7bcf4.js",
     "static/css/2.cfaadb5c.chunk.css",
     "static/js/2.36e9f766.chunk.js",
-    "static/css/main.71d0e38a.chunk.css",
+    "static/css/main.9f4ae437.chunk.css",
     "static/js/main.da96d507.chunk.js"
   ]
 }
