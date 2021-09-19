@@ -1,0 +1,10 @@
+.conteiner-home{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    .text-home{
+        text-align: justify;
+        margin: 0 auto;
+    }
+}
