@@ -7,4 +7,12 @@
         text-align: justify;
         margin: 0 auto;
     }
+
+}
+
+@media (max-width: 600px){
+    .conteiner-home{
+        display: flex;
+        flex-direction: column-reverse;
+    }   
 }
